@@ -1,0 +1,845 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    font-family: "Raleway", sans-serif;
+}
+
+html {
+    background-color: #000;
+    scroll-behavior: smooth !important;
+    overflow-x: hidden;
+    scrollbar-color: #fff #000;
+}
+
+body {
+    scroll-behavior: smooth !important;
+}
+
+p, i {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+
+/*NavBar*/
+.navMenu{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    height: fit-content;
+    overflow: visible;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 88px;
+    left: 50%;
+    border-radius: 0 0 2rem 2rem;
+    transform: translateX(-50%);
+    background-color: transparent;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+    padding: 15px 2%;
+    animation: none;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navMenuLogo {
+    width: fit-content;
+    height: 100%;
+    transition: transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: 200ms;
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navMenuLogo img {
+    height: 50px;
+    padding-left: 20px;
+  }
+  
+  .navMenuLogo:hover {
+    transform: scale(1.09);
+  }
+  
+  .navMenuLogo:active {
+    transform: scale(0.91);
+  }
+  
+  ul {
+    font-family: "Raleway", sans-serif;
+    list-style: none;
+    background-color: transparent;
+    margin-left: auto;
+  }
+  
+  .navMenu ul li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .navMenu ul li a {
+    display: block;
+    padding: 20px 25px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    transition: background-color ,color, transform;
+    transition-timing-function: ease;
+    transition-duration: 200ms;
+    border-radius: .5rem;
+  }
+  
+  .navMenu ul li ul.dropdown li {
+    display: block;
+  }
+  
+  .navMenu ul li ul.dropdown {
+    width: 175%;
+    background-color: #fce4e3;
+    position: absolute;
+    z-index: 14;
+    display: none;
+    border-radius: .5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.20);
+  }
+  
+  .navMenu ul li ul.dropdown li a {
+    text-align: left;
+  }
+  
+  .navMenu ul li a:hover {
+    background-color: #D7E059;
+    color: #000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  }
+  
+  .navMenu ul li a:active {
+    transform: scale(0.95);
+  }
+  
+  .navMenu ul.dropdown {
+    border-radius: 0 0 1rem 1rem;
+  }
+  
+  .navMenu ul li:hover ul.dropdown {
+    display: block;
+  }
+
+  #nav-toggle {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: end;
+    padding-right: 5%;
+    display: none;
+    z-index: 200;
+  }
+
+.bottomBar {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #D7E059;
+    z-index: 10;
+    transform: translateY(100%);
+    transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
+    padding: 15px 2%;
+    margin-left: -8px;
+}
+
+.bottomBarLinks, .bottomBarLinks a {
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+    font-family: "Poetsen One", sans-serif;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.bottomBar #nav-toggle {
+    display: block;
+    width: 100%;
+}
+
+.bottomBar #nav-toggle i {
+    color: #000;
+    text-align: right;
+}
+
+.bottomBar #nav-toggle a {
+    color: #000;
+}
+.bottomBar li {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+body[data-nav="true"] .bottomBar {  
+    transform: translateY(0%);
+}
+
+/* Footer*/
+.footer {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10% 0 5% 0;
+}
+
+.footerLinks li {
+    padding: 15px;
+    width: fit-content;
+}
+
+.footerLinks li a {
+    width: 100%;
+}
+
+.footerLinks p {
+    width: fit-content;
+    transition: all 200ms ease-in-out;
+}
+
+.footerLinks p:hover {
+    color: #D7E059;
+}
+
+.contactLinks .header , .contactLinks .header p {
+    font-family: "Poetsen One", sans-serif;
+    color: #fff;
+    font-size: 25px;
+}
+
+.contactLinks a {
+    width: fit-content;
+}
+
+.contactLinks a p ,.contactLinks a {
+    font-size: 25px;
+    text-decoration: underline;
+    transition: all 200ms ease-in-out;
+}
+
+.contactLinks a p:hover {
+    color: #D7E059;
+}
+
+
+
+/* Gallery/Hero */
+.Hero {
+    height: 700px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.Hero p {
+    font-family: "Poetsen One", sans-serif;
+    font-size: 2rem;
+    color: #D7E059;
+}
+
+.Hero h1 {
+    font-size: 1.2rem;
+    color: #D7E059;
+}
+
+.text {
+    width: fit-content;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.text h1 , .text p {
+    text-align: center;
+}
+
+.heroImg {
+    height: 100%;
+    align-items: end;
+    display: flex;
+    justify-content: center;
+  
+}
+
+.heroImg img {
+    position: absolute;
+    width: 50%;
+    object-fit: contain;
+}
+
+.Hero a {
+    width: fit-content;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 2% 0;
+}
+
+.Hero i {
+    color: #D7E059;
+    font-size: 2.5rem;
+    width: fit-content;
+    scale: 1;
+    transition: all 300ms ease-in-out;
+}
+
+.Hero i:hover {
+    scale: 1.2;
+}
+
+#Gallery {
+    padding-top: 2%;
+}
+
+.galleryItem {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 1fr;
+    color: #D7E059;
+    gap: 2% 0;
+    height: fit-content;
+    margin-bottom: -10%;
+}
+
+.itemName {
+    width: 500px;
+}
+
+.studioTeam {
+    height: 300px;
+    font-size: 20px;
+}
+
+.studioTeamList {
+    margin-bottom: 5%;
+}
+
+.studioTeam .itemName {
+    display: none;
+}
+
+.itemInfo {
+    height: 300px;
+}
+
+.itemInfo a {
+text-decoration: none;
+}
+
+.itemInfo button {
+    background-color: #D7E059;
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    border-radius: 2.5rem;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+    margin: 2% 20px 2% 0px;
+}
+
+.itemInfo button:hover {
+    scale: 1.2;
+}
+
+.itemInfo button p {
+    color: #000;
+}
+
+.Title {
+    font-family: "Poetsen One", sans-serif;
+    font-size: 5rem;
+    color: #fff;
+}
+
+.plain {
+    font-weight: 100;
+    font-size: .9rem;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.role {
+    display: list-item;
+    list-style-type: circle;
+    list-style-position: inside;
+    font-size: 16px;
+    color: #fff;
+}
+
+.galleryItem img {
+    width: 95%;
+    height: 34rem;
+    object-fit: cover;
+}
+
+.hidden {
+    opacity: 0;
+    scale: 0.9;
+    transition: all 1s;
+    border-radius: 0;
+}
+
+.hidden2  {
+    opacity: 0;
+    scale: 0.9;
+    transition: all 1s;
+    border-radius: 0;
+}
+
+.show {
+    opacity: 1;
+    scale: 1;
+    border-radius: 1rem ;
+}
+
+.popupEnter {
+    animation: 250ms fade-in ease-in;
+}
+
+/* Works Page */
+.main {
+    padding: 8% 0;
+    text-align: center;
+}
+
+.main .Title {
+    padding-bottom: 1rem;
+}
+
+.galleryGroup {
+    display:grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-auto-rows:100px 300px;
+    grid-gap:10px;
+    grid-auto-flow: dense;
+    gap: 1.5rem;
+}
+
+.galleryGroup .img {
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+.galleryGroup .img img {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position:50% 50%;
+    cursor:pointer;
+    transition:.5s ease-in-out;
+    border-radius: .5rem;
+}
+
+.galleryGroup .img:hover img {
+    transform:scale(1.05);
+}
+
+.homeW-2{
+    grid-column: span 2;
+}
+
+.homeH-1{
+    grid-row: span 1;
+}
+
+.PW-2 {
+    grid-column: span 2;
+}
+
+
+.w-1{
+    grid-column: span 1;
+}
+.w-2{
+    grid-column: span 2;
+}
+.w-3{
+    grid-column: span 3;
+}
+.w-4{
+    grid-column: span 4;
+}
+.w-5{
+    grid-column: span 5;
+}
+.w-6{
+    grid-column: span 6;
+}
+
+.h-1{
+    grid-row: span 1;
+}
+.h-2{
+    grid-row: span 2;
+}
+.h-3{
+    grid-row: span 3;
+}
+.h-4{
+    grid-row: span 4;
+}
+.h-5{
+    grid-row: span 5;
+}
+.h-6{
+    grid-row: span 6;
+}
+
+.main .imagePopUp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    display: none;
+    padding: 2%;
+}
+
+.main .imagePopUp span{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: #fff;
+    cursor: pointer;
+}
+
+.main .imagePopUp img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 95%;
+    object-fit: cover;
+}
+
+.galleryGroup {
+    padding: 5%;
+}
+
+/* about page*/
+.aboutPage {
+    width: 100%;
+    padding-top: 10%;
+}
+
+.aboutPage div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.selfie img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100rem;
+}
+
+.aboutPage p {
+    width: 40%;
+    text-align: center;
+}
+
+.specs {
+    padding: 15px 0;
+}
+
+.specs .name{
+    font-family: "Poetsen One", sans-serif;
+    font-size: 2rem;
+    color: #D7E059;
+}
+
+.aboutInfo .para {
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.infoExpand {
+    padding-top: 20px;
+}
+
+
+/* 2xl */
+@media (max-width: 1536px) {}
+
+/* xl */
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+        .galleryGroup {
+        padding: 5%;
+    }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+    }
+
+    .Hero {
+        height: 500px;
+    }
+    .galleryItem {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr 1fr;
+        padding-bottom: 5%;
+        padding-left: 5%;
+    }
+
+    .galleryItem img {
+        width: 95%;
+        height: 25rem;
+        object-fit: cover;
+    }
+
+    .itemName {
+        display: none;
+    }
+
+    .studioTeam .itemName {
+        display: block;
+        width: auto;
+    }
+
+    .Title {
+        font-size: 3rem;
+        padding-bottom: 5%;
+    }
+
+    .plain {
+        width: 80%;
+    }
+
+    .galleryGroup {
+        grid-template-columns: 1fr;
+        padding: 5%;
+        gap: 35px;
+    }
+
+    .main .imagePopUp img {
+        height: 80%;
+        width: 100%;
+        object-fit: contain !important;
+    }
+
+    .PW-2 {
+        grid-column: span 1;
+    }
+
+    .w-1{
+        grid-column: span 1;
+    }
+    .w-2{
+        grid-column: span 1;
+    }
+    .w-3{
+        grid-column: span 1;
+    }
+    .w-4{
+        grid-column: span 1;
+    }
+    .w-5{
+        grid-column: span 1;
+    }
+    .w-6{
+        grid-column: span 1;
+    }
+    
+    .h-1{
+        grid-row: span 2;
+    }
+    .h-2{
+        grid-row: span 2;
+    }
+    .h-3{
+        grid-row: span 2;
+    }
+    .h-4{
+        grid-row: span 2;
+    }
+    .h-5{
+        grid-row: span 2;
+    }
+    .h-6{
+        grid-row: span 2;
+    }
+}
+
+/* md */
+@media (max-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+    .heroImg img {
+        width: 60%;
+    }
+    #Gallery {
+        padding-top: 15%;
+    }
+
+    .galleryItem img {
+        width: 95%;
+        height: 20rem;
+        object-fit: cover;
+    }
+
+    .galleryItem {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        height: fit-content;
+        padding-bottom: 30%;
+    }
+
+    .PW-2 {
+        grid-column: span 2;
+    }
+
+    .SW-1 {
+        grid-column: span 2;
+    }
+
+    .plain {
+        width: 95%;
+    }
+
+    .navMenu ul {
+        display: none;
+    }
+    #nav-toggle {
+        display: block;
+    }
+
+    #nav-toggle i{
+        font-size: 40px;
+    }
+
+    .selfie {
+        padding-top: 10%;
+    }
+
+    .selfie img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .aboutPage p {
+        width: 50%;
+    }
+}
+
+/* sm */
+@media (max-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+    .galleryGroup {
+        gap: 15px;
+    }
+    .main {
+        padding: 20% 0;
+    }
+    .text h1 {
+        font-size: 12px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #Gallery {
+        padding-top: 15%;
+    }
+    .galleryItem {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        height: fit-content;
+        padding-bottom: 40%;
+    }
+}
+
+/* xs */
+@media (max-width: 475px) {
+    .container {
+        max-width: 100%;
+    }
+    .Hero {
+        height: 450px;
+        
+    }
+    .heroImg img {
+        width: 80%;
+    }
+
+    .galleryItem {
+        padding-bottom: 55%;
+    }
+
+    .selfie img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .aboutPage p {
+        width: 70%;
+    }
+}
+
+/* Animations */
+
+@keyframes slide {
+    from {transform: translateY(0);}
+    to {transform: translateY(-100%);}
+}
+
+@keyframes fade-in {
+    from { opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes FadeInBottom {
+    from {
+      transform: translateY(20%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes FadeOutBottom {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(20%);
+      opacity: 0;
+    }
+  }
