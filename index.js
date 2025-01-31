@@ -113,7 +113,6 @@ const Personal = () => {
 }
 
 const backButtonAction = () => {
-  Home_Page.dataset.page = "true";
   Sandbox_Page.dataset.page = "false";
   Bloom_Page.dataset.page = "false"; 
   Adrik_Page.dataset.page = "false"; 
@@ -124,7 +123,14 @@ const backButtonAction = () => {
   Personal_Page.dataset.page = "false";
   About_Page.dataset.page = "false"; 
   Contact_Page.dataset.page = "false";
+}
+
+const backButtonAction2 = () => {
+  Home_Page.dataset.page = "true";
   backButton.style.display = "none";
+}
+
+const backButtonAction3 = () => {
   document.querySelector('.imagePopUp').style.display = 'none';
   document.querySelector('.imagePopUp').classList.remove('popupEnter');
   document.querySelector('html').style.overflow = 'auto';
