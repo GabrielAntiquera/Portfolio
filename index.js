@@ -114,6 +114,15 @@ const Personal = () => {
 
 const backButtonAction = () => {
   Sandbox_Page.dataset.page = "false";
+  Bloom_Page.dataset.page = "false"; 
+  Adrik_Page.dataset.page = "false"; 
+  Petro_Page.dataset.page = "false"; 
+  Chow_Page.dataset.page = "false"; 
+  TC_Page.dataset.page = "false"; 
+  School_Page.dataset.page = "false"; 
+  Personal_Page.dataset.page = "false";
+  About_Page.dataset.page = "false"; 
+  Contact_Page.dataset.page = "false";  
 }
 
 const backButtonAction2 = () => {
