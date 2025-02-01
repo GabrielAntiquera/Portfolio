@@ -122,7 +122,7 @@ const backButtonAction = () => {
   School_Page.dataset.page = "false"; 
   Personal_Page.dataset.page = "false";
   About_Page.dataset.page = "false"; 
-  Contact_Page.dataset.page = "false";
+  Contact_Page.dataset.page = "false";  
 }
 
 const backButtonAction2 = () => {
