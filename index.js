@@ -71,56 +71,13 @@ const Button_Appear = () => {
 }
 
 let Sandbox_Page = document.querySelector(".Sandbox_Page");
-let Bloom_Page = document.querySelector(".Bloom_Page");
-let Adrik_Page = document.querySelector(".Adrik_Page");
-let Petro_Page = document.querySelector(".Petro_Page");
-let Chow_Page = document.querySelector(".Chow_Page");
-let TC_Page = document.querySelector(".TC_Page");
-let School_Page = document.querySelector(".School_Page");
-let Personal_Page = document.querySelector(".Personal_Page");
 
 const SandBox = () => {
   Sandbox_Page.dataset.page = Sandbox_Page.dataset.page === "true" ? "false" : "true";
 }
 
-const Bloom = () => {
-  Bloom_Page.dataset.page = Bloom_Page.dataset.page === "true" ? "false" : "true";
-}
-
-const Adrik = () => {
-  Adrik_Page.dataset.page = Adrik_Page.dataset.page === "true" ? "false" : "true";
-}
-
-
-const Petro = () => {
-  Petro_Page.dataset.page = Petro_Page.dataset.page === "true" ? "false" : "true";
-}
-
-const Chow = () => {
-  Chow_Page.dataset.page = Chow_Page.dataset.page === "true" ? "false" : "true";
-}
-
-const TC = () => {
-  TC_Page.dataset.page = TC_Page.dataset.page === "true" ? "false" : "true";
-}
-
-const School = () => {
-  School_Page.dataset.page = School_Page.dataset.page === "true" ? "false" : "true";
-}
-
-const Personal = () => {
-  Personal_Page.dataset.page = Personal_Page.dataset.page === "true" ? "false" : "true";
-}
-
 const backButtonAction = () => {
   Sandbox_Page.dataset.page = "false";
-  Bloom_Page.dataset.page = "false"; 
-  Adrik_Page.dataset.page = "false"; 
-  Petro_Page.dataset.page = "false"; 
-  Chow_Page.dataset.page = "false"; 
-  TC_Page.dataset.page = "false"; 
-  School_Page.dataset.page = "false"; 
-  Personal_Page.dataset.page = "false";
   About_Page.dataset.page = "false"; 
   Contact_Page.dataset.page = "false";  
 }
