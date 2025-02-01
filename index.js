@@ -83,6 +83,35 @@ const SandBox = () => {
   Sandbox_Page.dataset.page = Sandbox_Page.dataset.page === "true" ? "false" : "true";
 }
 
+const Bloom = () => {
+  Bloom_Page.dataset.page = Bloom_Page.dataset.page === "true" ? "false" : "true";
+}
+
+const Adrik = () => {
+  Adrik_Page.dataset.page = Adrik_Page.dataset.page === "true" ? "false" : "true";
+}
+
+
+const Petro = () => {
+  Petro_Page.dataset.page = Petro_Page.dataset.page === "true" ? "false" : "true";
+}
+
+const Chow = () => {
+  Chow_Page.dataset.page = Chow_Page.dataset.page === "true" ? "false" : "true";
+}
+
+const TC = () => {
+  TC_Page.dataset.page = TC_Page.dataset.page === "true" ? "false" : "true";
+}
+
+const School = () => {
+  School_Page.dataset.page = School_Page.dataset.page === "true" ? "false" : "true";
+}
+
+const Personal = () => {
+  Personal_Page.dataset.page = Personal_Page.dataset.page === "true" ? "false" : "true";
+}
+
 const backButtonAction = () => {
   Sandbox_Page.dataset.page = "false";
   Bloom_Page.dataset.page = "false"; 
@@ -99,9 +128,13 @@ const backButtonAction = () => {
 const backButtonAction2 = () => {
   Home_Page.dataset.page = "true";
   backButton.style.display = "none";
-  document.querySelector('.imagePopUp').classList.remove('popupEnter');
 }
 
+const backButtonAction3 = () => {
+  document.querySelector('.imagePopUp').style.display = 'none';
+  document.querySelector('.imagePopUp').classList.remove('popupEnter');
+  document.querySelector('html').style.overflow = 'auto';
+}
 
 //Image Popup
 document.querySelectorAll('.Works_Pages img').forEach(image => {

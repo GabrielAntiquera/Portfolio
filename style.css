@@ -332,7 +332,7 @@ object-fit: cover;
   opacity: 0;
   transition: height ,width, opacity;
   transition-timing-function: ease;
-  transition-duration: 200ms;
+  transition-duration: 250ms;
 }
 
 .Sandbox_Page[data-page="true"],.Bloom_Page[data-page="true"],.Adrik_Page[data-page="true"]
