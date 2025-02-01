@@ -125,7 +125,6 @@ z-index: 99;
   transition: transform, background-color;
   transition-timing-function: ease;
   transition-duration: 400ms;
-  display: none;
 }
 
 .backButton i {
@@ -146,6 +145,10 @@ z-index: 99;
   
 .backButton:active {
   transform: scale(0.96);
+}
+
+body[data-home="true"] > a > .backButton {
+  display: none;
 }
 
 /* Nav and Button interactions*/
@@ -300,51 +303,28 @@ object-fit: cover;
   transform: scale(0.98);
 }
 
-/* Works Pages */
 .Home {
   height: 0;
   width: 0;
   opacity: 0;
   transition: height ,width, opacity;
   transition-timing-function: ease;
-  transition-duration: 200ms;
+  transition-duration: 500ms;
 }
 
-.Home[data-page="true"] {
+body[data-home="true"] > main > .Home {
+  opacity: 1;
   height: auto;
   width: auto;
-  opacity: 1;
-}
+} 
 
-.Home[data-page="true"] .imagePopUp{
-  display: none;
-}
-
-.Home[data-page="true"] html {
-  overflow: auto;
-}
-
-.Sandbox_Page,.Bloom_Page,.Adrik_Page
-,.Petro_Page,.Chow_Page,.TC_Page
-,.School_Page,.Personal_Page,.Home,.Contacts,.About_Me{
-  height: 0;
-  width: 0;
-  opacity: 0;
-  transition: height ,width, opacity;
-  transition-timing-function: ease;
-  transition-duration: 250ms;
-}
-
-.Sandbox_Page[data-page="true"],.Bloom_Page[data-page="true"],.Adrik_Page[data-page="true"]
-,.Petro_Page[data-page="true"],.Chow_Page[data-page="true"],.TC_Page[data-page="true"]
-,.School_Page[data-page="true"],.Personal_Page[data-page="true"],.Contacts[data-page="true"],.About_Me[data-page="true"]{
-  height: auto;
-  width: auto;
-  opacity: 1;
-}
-
+/* Works Pages */
 .popupEnter {
   animation: 200ms fade-in ease-in;
+}
+
+.Works_Pages {
+  animation: 500ms fade-in ease-in;
 }
 
 .Works_Pages .imagePopUp {
