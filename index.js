@@ -22,7 +22,7 @@ let backButton = document.querySelector(".backButton");
 let homePage = document.querySelector(".Home");
 
 const Home = () => {
-  Home_Page.dataset.page = About_Page.dataset.page === "true" ? "false" : "true";
+  Home_Page.dataset.page = Home_Page.dataset.page === "true" ? "false" : "true";
 }
 const About = () => {
   About_Page.dataset.page = About_Page.dataset.page === "true" ? "false" : "true";
