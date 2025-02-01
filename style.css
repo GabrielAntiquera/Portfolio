@@ -316,6 +316,14 @@ object-fit: cover;
   opacity: 1;
 }
 
+.Home[data-page="true"] .imagePopUp{
+  display: none;
+}
+
+.Home[data-page="true"] html {
+  overflow: auto;
+}
+
 .Sandbox_Page,.Bloom_Page,.Adrik_Page
 ,.Petro_Page,.Chow_Page,.TC_Page
 ,.School_Page,.Personal_Page,.Home,.Contacts,.About_Me{

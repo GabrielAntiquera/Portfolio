@@ -71,6 +71,13 @@ const Button_Appear = () => {
 }
 
 let Sandbox_Page = document.querySelector(".Sandbox_Page");
+let Bloom_Page = document.querySelector(".Bloom_Page");
+let Adrik_Page = document.querySelector(".Adrik_Page");
+let Petro_Page = document.querySelector(".Petro_Page");
+let Chow_Page = document.querySelector(".Chow_Page");
+let TC_Page = document.querySelector(".TC_Page");
+let School_Page = document.querySelector(".School_Page");
+let Personal_Page = document.querySelector(".Personal_Page");
 
 const SandBox = () => {
   Sandbox_Page.dataset.page = Sandbox_Page.dataset.page === "true" ? "false" : "true";
@@ -78,6 +85,13 @@ const SandBox = () => {
 
 const backButtonAction = () => {
   Sandbox_Page.dataset.page = "false";
+  Bloom_Page.dataset.page = "false"; 
+  Adrik_Page.dataset.page = "false"; 
+  Petro_Page.dataset.page = "false"; 
+  Chow_Page.dataset.page = "false"; 
+  TC_Page.dataset.page = "false"; 
+  School_Page.dataset.page = "false"; 
+  Personal_Page.dataset.page = "false";
   About_Page.dataset.page = "false"; 
   Contact_Page.dataset.page = "false";  
 }
@@ -85,13 +99,9 @@ const backButtonAction = () => {
 const backButtonAction2 = () => {
   Home_Page.dataset.page = "true";
   backButton.style.display = "none";
+  document.querySelector('.imagePopUp').classList.remove('popupEnter');
 }
 
-const backButtonAction3 = () => {
-  document.querySelector('.imagePopUp').style.display = 'none';
-  document.querySelector('.imagePopUp').classList.remove('popupEnter');
-  document.querySelector('html').style.overflow = 'auto';
-}
 
 //Image Popup
 document.querySelectorAll('.Works_Pages img').forEach(image => {
