@@ -594,6 +594,10 @@ body[data-home="true"] > main > .Home {
 
   @media (max-width: 320px) {
     main {
-      padding-bottom: 50%;
+      padding-bottom: 35%;
+    }
+
+    nav {
+      bottom: 20px;
     }
   }
