@@ -442,9 +442,16 @@ video {
     position: absolute;
     top: 20px;
     right: 30px;
-    font-size: 2rem;
-    color: white;
+    font-size: 4.5rem;
     cursor: pointer;
+    color: #478f74;
+    z-index: 10;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.imgClose:hover {
+    transform: scale(1.2);
+    color: #3f7f69;
 }
 
 /* 2xl */
@@ -610,6 +617,11 @@ video {
         right: 20px;
         font-size: 4rem;
     }
+
+    .imgClose {
+        right: 20px;
+        font-size: 4rem;
+    }
 }
 
 /* xs */
@@ -669,6 +681,12 @@ video {
         right: 15px;
         font-size: 4.5rem;
     }
+
+    .imgClose {
+        top: 10px;
+        right: 15px;
+        font-size: 4.5rem;
+    }
 }
 
 /* xxs */
@@ -696,5 +714,9 @@ video {
 
     .projectGallery {
         gap: 10px;
+    }
+
+    .imgClose {
+        font-size: 4rem;
     }
 }
