@@ -444,7 +444,7 @@ video {
     right: 30px;
     font-size: 4.5rem;
     cursor: pointer;
-    color: #478f74;
+    color: #478f74 !important; 
     z-index: 10;
     transition: transform 0.2s ease, color 0.2s ease;
 }
