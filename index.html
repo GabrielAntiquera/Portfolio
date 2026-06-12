@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ovo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!—Standard favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon.png">
+    <!-- Fallback for older browsers -->
+    <link rel="shortcut icon" href="src/favicon.png" type="image/x-icon">
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="src/favicon.png">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Gabriel Antiquera</title>
+</head>
+<body class="container">
+    <section class="hero parentFlex">
+        <div class="heroGrid zoom-enabled">
+            <div class="heroTitle">
+                <p>Hey, there let's <span class="design">design</span> a <span class="story">story</span> together.</p>
+            </div>
+            <div class="heroAbout">
+                <p>My name is Gabriel Antiquera I am a Multimedia Artsit, My Design style is minimalistic and focuses more on contrast and texture and making the designs stand out thorugh using space. I believe that there is a story in every design be it big or small there will always be a story.</p>
+            </div>
+            <div class="heroImg">
+                <img src="src/Robot.png" alt="">
+            </div>
+        </div>
+            
+    </section>
+
+    <section class="featuredWorks parentFlex">
+        <div class="mainGrid no-zoom">
+            <div class="mainGrid_Item">
+                <img src="src/ATOS_Banner.png" data-project="atos">
+            </div>
+
+            <div class="mainGrid_Item">
+                <img src="src/Sales Connect_Banner.png" data-project="sales_connect">
+            </div>
+
+            <div class="mainGrid_Item">
+                <img src="src/Investment Night_Banner.png" data-project="investment_night">
+            </div>
+
+            <div class="mainGrid_Item">
+                <img src="src/Wedding Feast_Banner.png" data-project="wedding_feast">
+            </div>
+        </div>
+    </section>
+
+    <section class="moreProjects parentFlex">
+        <div class="sectionTitle">
+            <p>More Projects</p>
+            <i>Take a look around.</i>
+        </div>
+        <div class="subGrid no-zoom">
+            <div class="subGrid_Item">
+                <img src="src/Club Ananda_Banner.png" data-project="club_ananda">
+            </div>
+                        <div class="subGrid_Item">
+                <img src="src/Sandari Batulao_Banner.png" data-project="sbatulao">
+            </div>
+                        <div class="subGrid_Item">
+                <img src="src/Sandari Calatagan_Banner.png" data-project="scalatagan">
+            </div>
+                        <div class="subGrid_Item">
+                <img src="src/Sandbox.webp" data-project="sandbox">
+            </div>
+                        <div class="subGrid_Item">
+                <img src="src/Bloom_Icon.webp" data-project="bloom">
+            </div>
+                        <div class="subGrid_Item">
+                <img src="src/Evening With Adrik.webp" data-project="adrik">
+            </div>
+        </div>
+    </section>
+
+<section class="contact parentFlex">
+
+    <div class="contactGrid">
+
+        <div class="contactPhone">
+            <img src="src/Phone.png" alt="Phone">
+        </div>
+
+        <div class="contactInfo">
+
+            <a href="mailto:your@email.com" class="contactLink">
+                your@email.com
+            </a>
+
+            <a href="tel:+639123456789" class="contactLink">
+                +63 912 345 6789
+            </a>
+
+            <div class="socialLinks">
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-behance"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <div class="projectModal" id="projectModal">
+
+        <div class="projectModalContent">
+
+            <span class="closeProject">&times;</span>
+
+            <!-- Banner -->
+            <div class="projectBanner">
+                <img id="modalBanner" src="" alt="">
+            </div>
+
+            <!-- Title + Description -->
+            <div class="projectDescription">
+                <h2 id="modalTitle"></h2>
+                <p id="modalYear"></p>
+                <p id="modalDesc"></p>
+            </div>
+
+            <!-- Gallery -->
+            <div class="projectGallery" id="modalGallery">
+                <!-- images injected by JS -->
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="imgModal" id="imgModal">
+        <span class="imgClose">&times;</span>
+        <img id="imgModalSrc" src="" alt="">
+    </div>
+
+</body>
+    <script type="text/javascript" src="index.js"></script>
+</html>

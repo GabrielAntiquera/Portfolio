@@ -1,0 +1,700 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 100px;
+}
+
+body {
+    padding-right: 0 !important;
+    min-height: 100vh;
+}
+
+html{
+    background-color: #f3eaeb;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+html:has(video:fullscreen) {
+    scrollbar-gutter: auto;
+}
+
+.parentFlex {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    padding: 5% 0 0 0;
+}
+
+.zoom-enabled img {
+    cursor: zoom-in;
+}
+
+.no-zoom img {
+    cursor: default;
+}
+
+video {
+    object-fit: cover; /* keep modal look */
+}
+
+.heroTitle p,
+.story {
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: .95;
+}
+
+.story {
+    font-family: Kaushan Script;
+    font-weight: 400;
+}
+
+/* Fullscreen video */
+.projectGallery video.fullscreen-portrait:fullscreen,
+.projectGallery video.fullscreen-portrait:-webkit-full-screen {
+    width: auto !important;
+    height: 100vh !important;
+    object-fit: contain !important;
+    background: black;
+}
+
+.projectGallery video.fullscreen-landscape:fullscreen,
+.projectGallery video.fullscreen-landscape:-webkit-full-screen {
+    width: 100vw !important;
+    height: auto !important;
+    object-fit: contain !important;
+    background: black;
+}
+
+/* Modal */
+.projectModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+
+    display: flex; /* keep flex always */
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+.projectModalContent {
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #f3eaeb;
+    padding: 40px;
+    position: relative;
+}
+
+.projectBanner {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.projectBanner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.projectModal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.projectModal {
+    pointer-events: all;
+}
+
+.projectModalContent {
+    pointer-events: auto;
+}
+
+.projectModal {
+    pointer-events: none;
+}
+
+.projectModal.active {
+    pointer-events: all;
+}
+
+.closeProject {
+    position: sticky;
+    top: 15px;
+    float: right;
+
+    font-size: 4.5rem;
+    cursor: pointer;
+    color: #478f74;
+    z-index: 10;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.closeProject:hover {
+    transform: scale(1.2);
+    color: #3f7f69;
+}
+
+
+.projectDescription {
+    text-align: center;
+    padding: 20px 0 50px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectDescription h2 {
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #478f74;
+}
+
+.projectDescription p {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #478f74;
+    width: 50%;
+}
+
+.projectGallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.projectGallery img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+    object-position: top;
+}
+
+.projectGallery video {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+    object-position: top;
+}
+
+#modalYear {
+    font-family: Montserrat;
+    font-size: 1rem;
+    color: #478f74;
+    margin: 5px 0 10px 0;
+    opacity: 0.8;
+}
+
+/* Titles */
+
+.heroTitle {
+    width: 100%;
+    text-align: left;
+}
+
+.heroTitle p {
+    color: #478f74;
+    font-size: 6rem;
+    line-height: .95;
+    font-family: Poppins;
+    font-weight: 600;
+}
+
+.story {
+    font-family: Kaushan Script;
+    font-weight: 400;
+    font-size: 6rem;
+}
+
+.design {
+    font-family: Ovo;
+}
+
+.heroAbout {
+    padding: 50px 0 0 0;
+    text-align: left;
+}
+
+.heroAbout p {
+    color: #478f74;
+    font-size: 1rem;
+    line-height: 1;
+    font-family: Montserrat;
+    font-weight: 400;
+    max-width: 45ch;
+}
+
+.sectionTitle{
+    width: 90%;  
+    margin: 0 auto;  
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.sectionTitle p {
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #478f74;
+}
+
+.sectionTitle i {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #478f74;
+}
+
+/* Hero */
+.hero {
+    min-height: 500px;
+}
+
+.heroGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 0 0 0;
+}
+
+.heroTitle {
+    grid-column: span 2;
+}
+
+.heroAbout {
+    grid-column: span 2;
+    width: 50%;
+}
+
+.heroImg {
+    width: 100%;
+    height: 100%;
+}
+
+.heroImg img {
+    width: 100%;
+}
+/* Feature Works */
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 80%;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.mainGrid_Item {
+    transition: transform 500ms cubic-bezier(.13,.53,.38,.97);  
+}
+
+.mainGrid_Item:hover{
+    transition: transform 500ms cubic-bezier(.13,.53,.38,.97);  
+    transform: scale(105%);
+}
+
+.mainGrid_Item img {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* More Projects */
+.moreProjects {
+    padding: 100px 0 2% 0;
+}
+.subGrid {
+    display: grid;
+    width: 80%;
+    gap: 20px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3,1fr);
+    object-fit: cover;
+}
+
+.subGrid_Item {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    transition: transform 500ms cubic-bezier(.13,.53,.38,.97);  
+}
+
+.subGrid_Item:hover{
+    transition: transform 500ms cubic-bezier(.13,.53,.38,.97);  
+    transform: scale(105%);
+}
+
+.subGrid_Item img {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: block;
+    object-fit: cover;
+}
+
+/* Contact */
+.contactGrid {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    justify-items: center;
+    text-align: center;
+    padding: 40px 0 0 0;
+}
+
+.contactPhone img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+}
+
+.phone{
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.contactLink {
+    font-family: Poppins;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #478f74;
+    text-decoration: none;
+}
+
+.socialLinks {
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.socialLinks a {
+    color: #478f74;
+    text-decoration: none;
+}
+
+.socialLinks i {
+    color: inherit;
+}
+
+/* Image Modal */
+.imgModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 20000;
+    cursor: zoom-out;
+}
+
+.imgModal.active {
+    display: flex;
+}
+
+.imgModal img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.imgClose {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* 2xl */
+@media (max-width: 1536px) {}
+
+/* xl */
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+
+    .heroGrid,
+    .mainGrid,
+    .subGrid,
+    .contactGrid {
+        width: 90%;
+    }
+
+    .heroTitle p {
+        font-size: 5rem;
+    }
+
+    .story {
+        font-size: 5rem;
+    }
+
+    .heroAbout {
+        width: 60%;
+    }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+
+    .heroTitle p {
+        font-size: 4rem;
+    }
+
+    .story {
+        font-size: 4rem;
+    }
+
+    .heroAbout {
+        width: 70%;
+    }
+
+    .projectDescription p {
+        width: 75%;
+    }
+
+    .subGrid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+    }
+}
+
+/* md */
+@media (max-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 400px;
+    }
+
+    .heroGrid {
+        width: 90%;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* REMOVE ROBOT */
+    .heroImg {
+        display: none;
+    }
+
+    .heroTitle,
+    .heroAbout {
+        grid-column: 1 / -1;
+    }
+
+    .heroAbout {
+        width: 70%;
+    }
+
+    .heroTitle p {
+        font-size: 4rem;
+        line-height: 0.95;
+    }
+
+    .mainGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .subGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projectGallery {
+        grid-template-columns: 1fr;
+    }
+
+    .projectDescription p {
+        width: 90%;
+    }
+
+    .sectionTitle p {
+        font-size: 2.5rem;
+    }
+
+    .projectModalContent {
+        padding: 25px;
+    }
+
+    .closeProject {
+        font-size: 3.5rem;
+    }
+}
+
+/* sm */
+@media (max-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+
+     .heroGrid,
+    .mainGrid,
+    .subGrid,
+    .contactGrid {
+        width: 95%;
+    }
+
+    .heroTitle p {
+        font-size: clamp(2.5rem, 8vw, 3.2rem);
+        line-height: 1;
+    }
+
+    .design {
+        font-size: inherit; /* stay same size as main text */
+    }
+
+    .heroAbout p {
+        font-size: 0.95rem;
+    }
+
+    .sectionTitle p {
+        font-size: 2rem;
+    }
+
+    .projectDescription h2 {
+        font-size: 2rem;
+    }
+
+    .projectDescription p {
+        width: 100%;
+    }
+
+    .closeProject {
+        right: 20px;
+        font-size: 4rem;
+    }
+}
+
+/* xs */
+@media (max-width: 475px) {
+    .container {
+        max-width: 100%;
+    }
+
+        .parentFlex {
+        padding-top: 10%;
+    }
+
+    .heroGrid {
+        width: 95%;
+        padding-top: 10px;
+    }
+
+    .heroTitle p {
+        font-size: 3.5rem;
+        line-height: 0.95;
+    }
+
+    .heroAbout {
+        width: 80%;
+        padding-top: 25px;
+    }
+
+    .heroAbout p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .sectionTitle p {
+        font-size: 1.75rem;
+    }
+
+    .sectionTitle i {
+        font-size: 0.9rem;
+    }
+
+    .projectDescription h2 {
+        font-size: 1.75rem;
+    }
+
+    .projectDescription p,
+    #modalYear {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .projectModalContent {
+        padding: 15px;
+    }
+
+    .closeProject {
+        top: 10px;
+        right: 15px;
+        font-size: 4.5rem;
+    }
+}
+
+/* xxs */
+@media (max-width: 375px) {
+
+    .heroTitle p {
+        font-size: 3rem;
+    }
+
+    .story {
+        font-size: 2rem;
+    }
+
+    .heroAbout {
+        width: 100%;
+    }
+
+    .projectModalContent {
+        padding: 10px;
+    }
+
+    .closeProject {
+        font-size: 4rem;
+    }
+
+    .projectGallery {
+        gap: 10px;
+    }
+}
