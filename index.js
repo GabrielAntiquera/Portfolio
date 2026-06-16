@@ -21,7 +21,6 @@ function enableImageZoom(img) {
         e.stopPropagation();
 
         imgModal.classList.add("active");
-        openModalState("image");
         imgModalSrc.src = img.src;
 
         document.documentElement.style.overflow = "hidden";
@@ -52,31 +51,6 @@ imgClose.addEventListener("click", closeImgModal);
 imgModal.addEventListener("click", (e) => {
     if (e.target === imgModal) {
         closeImgModal();
-    }
-});
-
-function closeProjectModal(fromHistory = false) {
-
-    projectModal.classList.remove("active");
-
-    document.documentElement.style.overflow = "";
-    document.body.style.overflow = "";
-
-    if (!fromHistory && history.state?.modal === "project") {
-        history.back();
-    }
-}
-
-window.addEventListener("popstate", () => {
-
-    if (imgModal.classList.contains("active")) {
-        closeImgModal(true);
-        return;
-    }
-
-    if (projectModal.classList.contains("active")) {
-        closeProjectModal(true);
-        return;
     }
 });
 
@@ -257,7 +231,6 @@ document.querySelectorAll("[data-project]").forEach(item => {
         projectModalContent.scrollTop = 0; // reset scroll
 
         projectModal.classList.add("active");
-        openModalState("project");
 
             requestAnimationFrame(() => {
         projectModalContent.scrollTop = 0;
@@ -328,25 +301,4 @@ window.addEventListener("load", () => {
         loader.classList.add("hidden");
         document.body.classList.remove("loading");
     }, 300); // optional smooth delay
-});
-
-// Helper Function 
-
-function openModalState(type) {
-    history.pushState({ modal: type }, "");
-}
-
-window.addEventListener("popstate", () => {
-
-    // Close image modal first
-    if (imgModal.classList.contains("active")) {
-        closeImgModal();
-        return;
-    }
-
-    // Then project modal
-    if (projectModal.classList.contains("active")) {
-        closeProjectModal();
-        return;
-    }
 });
