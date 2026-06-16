@@ -11,6 +11,7 @@ const modalGallery = document.getElementById("modalGallery");
 const projectModalContent = document.querySelector(".projectModalContent");
 
 const closeProject = document.querySelector(".closeProject");
+document.body.classList.add("loading");
 
 
 // IMAGE ZOOM MODAL
@@ -36,6 +37,11 @@ document.querySelectorAll(".zoom-enabled img").forEach(img => {
 
 function closeImgModal() {
     imgModal.classList.remove("active");
+
+    setTimeout(() => {
+        imgModalSrc.src = "";
+    }, 300);
+
     document.documentElement.style.overflow = "";
     document.body.style.overflow = "";
 }
@@ -106,8 +112,10 @@ const projects = {
         images: [
             { type: "video", src: "src/Club Ananda Ad .webm" },
             { type: "video", src: "src/POV Reel.webm" },
-            { type: "image", src: "src/Club Ananda Post 1.png" },
-            { type: "image", src: "src/The Wedding Library_Club Ananda.png" },
+            { type: "image", src: "src/Club Ananda_01.png" },
+            { type: "image", src: "src/Club Ananda_02.png" },
+            { type: "image", src: "src/Club Ananda_03.png" },
+            { type: "image", src: "src/Club Ananda_04.jpg" },
         ]
     },
 
@@ -117,7 +125,10 @@ const projects = {
         banner: "src/Sandari Batulao_Banner.png",
         desc: "Sandari Batulao is a wellness-focused mountain community in Batangas that promotes holistic living through nature, sustainability, and thoughtfully designed spaces. Surrounded by scenic landscapes, it offers a peaceful environment that encourages balance, relaxation, and connection with the outdoors.",
         images: [
-            { type: "image", src: "src/ATOS Card.webp" }
+            { type: "video", src: "src/Mother's Day Video.webm" },
+            { type: "image", src: "src/Batulao_01.jpg" },
+            { type: "image", src: "src/Batulao_02.jpg" },
+            { type: "image", src: "src/Batulao_03.jpg" }
         ]
     },
 
@@ -127,7 +138,13 @@ const projects = {
         banner: "src/Sandari Calatagan_Banner.png",
         desc: "Sandari Calatagan is a coastal wellness community in Batangas that blends seaside living with sustainable design and modern amenities. Inspired by the tranquility of the ocean, it offers a serene environment that supports rest, recreation, and a balanced lifestyle.",
         images: [
-            { type: "video", src: "src/Calatagan video.webm" }
+            { type: "video", src: "src/Calatagan video.webm" },
+            { type: "image", src: "src/Calatagan_01.jpg" },
+            { type: "image", src: "src/Calatagan_02.jpg" },
+            { type: "image", src: "src/Calatagan_03.jpg" },
+            { type: "image", src: "src/Calatagan_04.jpg" },
+            { type: "image", src: "src/Calatagan_05.jpg" }
+            
         ]
     },
 
@@ -271,4 +288,17 @@ document.addEventListener("fullscreenchange", () => {
             video.classList.add("fullscreen-landscape");
         }
     }
+});
+
+
+
+// PAGE LOADER
+
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+        loader.classList.add("hidden");
+        document.body.classList.remove("loading");
+    }, 300); // optional smooth delay
 });
