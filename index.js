@@ -23,8 +23,7 @@ function enableImageZoom(img) {
         imgModal.classList.add("active");
         imgModalSrc.src = img.src;
 
-        document.documentElement.style.overflow = "hidden";
-        document.body.style.overflow = "hidden";
+        document.body.classList.add("modal-open");
 
         document.body.style.position = "";
         document.body.style.width = "";
@@ -42,8 +41,7 @@ function closeImgModal() {
         imgModalSrc.src = "";
     }, 300);
 
-    document.documentElement.style.overflow = "";
-    document.body.style.overflow = "";
+    document.body.classList.remove("modal-open");
 }
 
 imgClose.addEventListener("click", closeImgModal);
@@ -236,8 +234,7 @@ document.querySelectorAll("[data-project]").forEach(item => {
         projectModalContent.scrollTop = 0;
         });
 
-        document.documentElement.style.overflow = "hidden";
-        document.body.style.overflow = "hidden";
+        document.body.classList.add("modal-open");
     });
 });
 
@@ -247,12 +244,8 @@ document.querySelectorAll("[data-project]").forEach(item => {
 function closeProjectModal() {
     projectModal.classList.remove("active");
 
-    document.documentElement.style.overflow = "";
-    document.body.style.overflow = "";
-
-    document.body.style.position = "";
-    document.body.style.width = "";
-
+    document.body.classList.remove("modal-open");
+    
     projectModalContent.scrollTo(0, 0);
 
         // STOP ALL VIDEOS
