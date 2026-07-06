@@ -1,3 +1,4 @@
+let scrollPosition = 0;
 const imgModal = document.getElementById("imgModal");
 const imgModalSrc = document.getElementById("imgModalSrc");
 const imgClose = document.querySelector(".imgClose");
@@ -23,10 +24,13 @@ function enableImageZoom(img) {
         imgModal.classList.add("active");
         imgModalSrc.src = img.src;
 
-        document.body.classList.add("modal-open");
+        scrollPosition = window.scrollY;
 
-        document.body.style.position = "";
-        document.body.style.width = "";
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.width = "100%";
+
+        document.body.classList.add("modal-open");
     });
 }
 
@@ -42,6 +46,12 @@ function closeImgModal() {
     }, 300);
 
     document.body.classList.remove("modal-open");
+
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+
+    window.scrollTo(0, scrollPosition);
 }
 
 imgClose.addEventListener("click", closeImgModal);
@@ -234,6 +244,12 @@ document.querySelectorAll("[data-project]").forEach(item => {
         projectModalContent.scrollTop = 0;
         });
 
+        scrollPosition = window.scrollY;
+
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.width = "100%";
+
         document.body.classList.add("modal-open");
     });
 });
@@ -245,6 +261,12 @@ function closeProjectModal() {
     projectModal.classList.remove("active");
 
     document.body.classList.remove("modal-open");
+
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+
+    window.scrollTo(0, scrollPosition);
     
     projectModalContent.scrollTo(0, 0);
 
